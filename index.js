@@ -158,7 +158,7 @@ Person.deleteMany({ name: 'Mary' })
 Person.find({ favoriteFoods: 'Burger' })
   .sort('name')
   .limit(2)
-  .select('-age')
+  .select('-age') // the field "age" is being excluded from the returned documents
   .exec()
   .then(data => {
     console.log('People who like Burger:', data);
